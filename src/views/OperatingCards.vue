@@ -1,20 +1,20 @@
 <template>
   <v-card
     class="overflow-hidden"
-    max-height="calc(100vh - 88px)"
+    min-height="calc(100vh - 88px)"
     color="accent"
   >
     <ContextualActionBar></ContextualActionBar>
     <!-- <v-main> -->
     <v-sheet
       id="scrolling-techniques-7"
-      class="overflow-y-auto mt-16 pt-4"
-      max-height="calc(100vh - 150px)"
+      class="overflow-y-auto pt-4"
+      max-height="calc(100vh - 208px)"
       color="accent"
     >
       <v-container>
         <v-row>
-          <v-col v-for="n in 21" :key="n" cols="12" xl="2" lg="3" md="4" sm="6">
+          <v-col v-for="n in 31" :key="n" cols="12" xl="2" lg="3" md="4" sm="6">
             <v-card height="200">
               <router-link to="/operatingcarddetails"
                 >Go to Details</router-link

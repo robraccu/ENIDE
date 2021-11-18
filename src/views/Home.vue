@@ -1,5 +1,5 @@
 <template>
-  <v-sheet rounded="lg" color="accent" max-height="calc(100vh - 88px)">
+  <v-sheet rounded="lg" color="accent" min-height="calc(100vh - 88px)">
     <HomeSectionLinks />
   </v-sheet>
 </template>
