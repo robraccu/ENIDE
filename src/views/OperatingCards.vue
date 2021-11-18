@@ -8,7 +8,7 @@
     <!-- <v-main> -->
     <v-sheet
       id="scrolling-techniques-7"
-      class="overflow-y-auto pt-4"
+      class="overflow-y-auto pt-0"
       max-height="calc(100vh - 208px)"
       color="accent"
     >
