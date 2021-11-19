@@ -16,7 +16,9 @@
 
     <v-main class="grey lighten-4" style="margin-top: -64px">
       <v-container max-height="calc(100vh - 88px)">
-        <router-view />
+        <perfect-scrollbar ref="scroll">
+          <router-view />
+        </perfect-scrollbar>
       </v-container>
     </v-main>
   </v-app>
@@ -28,5 +30,16 @@ export default {
   data: () => ({
     links: ["Dashboard", "Messages", "Profile", "Updates"],
   }),
+  watch: {
+    $route() {
+      this.$refs.scroll.$el.scrollTop = 0;
+    },
+  },
 };
 </script>
+
+<style>
+html {
+  overflow: hidden !important;
+}
+</style>

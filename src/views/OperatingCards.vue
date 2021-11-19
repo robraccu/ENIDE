@@ -4,27 +4,68 @@
     min-height="calc(100vh - 88px)"
     color="accent"
   >
-    <ContextualActionBar></ContextualActionBar>
-    <!-- <v-main> -->
+    <ContextualActionBar title="Schede Operative"></ContextualActionBar>
+    <v-banner single-line sticky dark>
+      <v-row class="d-flex flex-row justify-end align-center">
+        <v-col cols="3">
+          <v-select
+            :items="orders"
+            outlined
+            label="Ordine di visualizzazione"
+            dense
+            hide-details
+            class="pt-2"
+          ></v-select>
+        </v-col>
+        <v-col cols="3">
+          <v-select
+            :items="filters"
+            outlined
+            label="Filtri"
+            dense
+            hide-details
+            class="pt-2"
+          ></v-select>
+        </v-col>
+
+        <v-col cols="3" class="ml-auto">
+          <v-text-field
+            label="Cerca"
+            placeholder="scrivi una o più parole"
+            filled
+            rounded
+            dense
+            hide-details
+            prepend-inner-icon="mdi-magnify"
+            single-line
+            class="pt-2 pr-3"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+    </v-banner>
     <v-sheet
       id="scrolling-techniques-7"
       class="overflow-y-auto pt-0"
       max-height="calc(100vh - 208px)"
       color="accent"
     >
-      <v-container>
-        <v-row>
-          <v-col v-for="n in 31" :key="n" cols="12" xl="2" lg="3" md="4" sm="6">
-            <OperatingCard></OperatingCard>
-            <!-- <v-card height="200">
-              <router-link to="/operatingcarddetails"
-                >Go to Details</router-link
-              >
-            </v-card> -->
-          </v-col>
-        </v-row>
-      </v-container>
-      <!-- </v-main> -->
+      <perfect-scrollbar>
+        <v-container>
+          <v-row>
+            <v-col
+              v-for="n in 31"
+              :key="n"
+              cols="12"
+              xl="2"
+              lg="3"
+              md="4"
+              sm="6"
+            >
+              <OperatingCard></OperatingCard>
+            </v-col>
+          </v-row>
+        </v-container>
+      </perfect-scrollbar>
     </v-sheet>
   </v-card>
 </template>
@@ -35,5 +76,18 @@ import OperatingCard from "../components/OperatingCard.vue";
 export default {
   name: "OperatingCards",
   components: { ContextualActionBar, OperatingCard },
+
+  data() {
+    return {
+      orders: ["alfabetico BS/IS/BA", "per codice CAME"],
+      filters: ["Foo", "Bar", "Fizz", "Buzz"],
+    };
+  },
 };
 </script>
+
+<style scoped>
+.ps {
+  height: calc(100vh - 208px);
+}
+</style>
