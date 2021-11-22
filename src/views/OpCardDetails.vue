@@ -18,7 +18,9 @@
         </v-col>
 
         <v-col cols="3" class="text-right">
-          <v-btn rounded color="primary" class="ma-2">Esporta Card</v-btn>
+          <v-btn rounded color="primary" class="ma-2" disabled
+            >Esporta Card</v-btn
+          >
         </v-col>
       </v-row>
     </v-banner>

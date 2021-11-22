@@ -30,7 +30,7 @@
             </v-list-item-action>
           </v-list-item>
         </v-card>
-        <v-card class="my-4">
+        <v-card class="my-4" disabled>
           <v-list-item two-line>
             <v-list-item-avatar tile size="72" color="secondary"
               ><v-icon x-large color="primary"
@@ -57,7 +57,7 @@
             </v-list-item-action>
           </v-list-item>
         </v-card>
-        <v-card class="my-4">
+        <v-card class="my-4" disabled>
           <v-list-item two-line>
             <v-list-item-avatar tile size="72" color="secondary"
               ><v-icon x-large color="primary"

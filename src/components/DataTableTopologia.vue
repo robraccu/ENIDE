@@ -1,20 +1,13 @@
 <template>
   <v-data-table
-    :headers="headers"
+    :headers="headerTable"
     :items="desserts"
+    :calculate-widths="true"
     class="elevation-1 mt-2"
-    dense
-    fixed-header="true"
     :loading="loading"
     loading-text="Caricamento... Attendere, per favore."
     multi-sort
   >
-    <!-- <template v-slot:header.name="{ header }">
-      {{ header.text.toUppercase() }}
-    </template> -->
-    <!-- <template v-slot:header="{ header }">
-      {{ header.text.toUpperCase() }}
-    </template> -->
   </v-data-table>
 </template>
 
@@ -22,18 +15,7 @@
 export default {
   data: () => ({
     loading: false,
-    headers: [
-      {
-        text: "Nome nodo",
-        align: "start",
-        value: "name",
-      },
-      { text: "Lifecycle", value: "lifecycle" },
-      { text: "Location", value: "location" },
-      { text: "Is Virtual", value: "virtual" },
-      { text: "Resilienza Infracheck", value: "resilienza" },
-      { text: "Owner CI", value: "owner" },
-    ],
+    fixHeader: true,
     desserts: [
       {
         name: "02srv00qwe",
@@ -108,6 +90,38 @@ export default {
         owner: "CC_PAAS_HS_SYS_LINUXUNIX",
       },
       {
+        name: "02srv00eed",
+        lifecycle: "in use",
+        location: "CAGE-A",
+        virtual: "true",
+        resilienza: "SI",
+        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
+      },
+      {
+        name: "02srv00ezx",
+        lifecycle: "in use",
+        location: "CAGE-A",
+        virtual: "true",
+        resilienza: "NO",
+        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
+      },
+      {
+        name: "02srv00csd",
+        lifecycle: "in use",
+        location: "CAGE-A",
+        virtual: "true",
+        resilienza: "SI",
+        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
+      },
+      {
+        name: "02srv00czx",
+        lifecycle: "in use",
+        location: "CAGE-A",
+        virtual: "true",
+        resilienza: "NO",
+        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
+      },
+      {
         name: "02srv00asd",
         lifecycle: "in use",
         location: "CAGE-A",
@@ -117,6 +131,48 @@ export default {
       },
     ],
   }),
+  computed: {
+    headerTable() {
+      return [
+        {
+          text: "Nome nodo".toUpperCase(),
+          align: "center",
+          value: "name",
+          sortable: true,
+        },
+        {
+          text: "Lifecycle".toUpperCase(),
+          align: "center",
+          value: "lifecycle",
+          sortable: true,
+        },
+        {
+          text: "Location".toUpperCase(),
+          align: "center",
+          value: "location",
+          sortable: true,
+        },
+        {
+          text: "Is Virtual".toUpperCase(),
+          align: "center",
+          value: "virtual",
+          sortable: true,
+        },
+        {
+          text: "Resilienza Infracheck".toUpperCase(),
+          align: "center",
+          value: "resilienza",
+          sortable: false,
+        },
+        {
+          text: "Owner CI".toUpperCase(),
+          align: "center",
+          value: "owner",
+          sortable: true,
+        },
+      ];
+    },
+  },
 };
 </script>
 
