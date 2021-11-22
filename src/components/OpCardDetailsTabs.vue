@@ -1,9 +1,9 @@
 <template>
   <div id="tabsDetails">
     <v-tabs v-model="tab" background-color="secondary" grow color="#000">
-      <v-tab v-for="item in items" :key="item" dark>
-        {{ item }}
-      </v-tab>
+      <v-tab> Topologia Infrastruttura </v-tab>
+      <v-tab disabled> Topologie Running Software </v-tab>
+      <v-tab disabled> Dipendenze </v-tab>
       <v-tabs-slider color="accent"></v-tabs-slider>
     </v-tabs>
 
@@ -24,12 +24,6 @@ export default {
   data() {
     return {
       tab: null,
-      items: [
-        "Topologia Infrastruttura",
-        "Topologie Running Software",
-        "Dipendenze",
-      ],
-      text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
     };
   },
 };
