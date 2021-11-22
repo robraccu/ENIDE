@@ -1,7 +1,7 @@
 <template>
   <v-data-table
     :headers="headerTable"
-    :items="desserts"
+    :items="records"
     :calculate-widths="true"
     class="elevation-1 mt-2"
     :loading="loading"
@@ -16,7 +16,7 @@ export default {
   data: () => ({
     loading: false,
     fixHeader: true,
-    desserts: [
+    records: [
       {
         name: "02srv00qwe",
         lifecycle: "configured",
