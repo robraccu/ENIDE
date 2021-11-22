@@ -61,7 +61,11 @@
               md="4"
               sm="6"
             >
-              <OperatingCard></OperatingCard>
+              <OperatingCard
+                :type="type"
+                :namecard="namecard"
+                :idcame="idcame"
+              ></OperatingCard>
             </v-col>
           </v-row>
         </v-container>
@@ -81,6 +85,9 @@ export default {
     return {
       orders: ["alfabetico BS/IS/BA", "per codice CAME"],
       filters: ["Foo", "Bar", "Fizz", "Buzz"],
+      type: "Business Service",
+      namecard: "Name BS",
+      idcame: "id CAME",
     };
   },
 };

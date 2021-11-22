@@ -1,10 +1,10 @@
 <template>
   <v-card>
-    <v-card-subtitle class="blue white--text text-overline"
-      >Business Service</v-card-subtitle
-    >
-    <v-card-title>[Nome BS]</v-card-title>
-    <v-card-text>[ID CAME]</v-card-text>
+    <v-card-subtitle class="blue white--text text-overline">{{
+      type
+    }}</v-card-subtitle>
+    <v-card-title>[{{ namecard }}]</v-card-title>
+    <v-card-text>[{{ idcame }}]</v-card-text>
     <v-divider></v-divider>
     <v-card-actions>
       <v-btn rounded icon>
@@ -21,7 +21,7 @@
 
         <v-list dense>
           <v-list-item
-            v-for="(item, i) in items"
+            v-for="(item, i) in itemsMenu"
             :key="i"
             to="/operatingcarddetails"
           >
@@ -35,8 +35,9 @@
 
 <script>
 export default {
+  props: { type: String, namecard: String, idcame: String },
   data: () => ({
-    items: [
+    itemsMenu: [
       { title: "Scheda Operativa" },
       { title: "Piano operativo" },
       { title: "Vista GDC" },
