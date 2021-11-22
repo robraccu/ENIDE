@@ -27,9 +27,7 @@
 <script>
 export default {
   name: "App",
-  data: () => ({
-    links: ["Dashboard", "Messages", "Profile", "Updates"],
-  }),
+
   watch: {
     $route() {
       this.$refs.scroll.$el.scrollTop = 0;
