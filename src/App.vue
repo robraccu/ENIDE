@@ -8,8 +8,8 @@
 
         <v-spacer></v-spacer>
 
-        <v-responsive max-width="400"
-          ><h1>ICT Availability portal name</h1></v-responsive
+        <v-responsive max-width="150"
+          ><h1 class="text-right">VIRGILIO</h1></v-responsive
         >
       </v-container>
     </v-app-bar>

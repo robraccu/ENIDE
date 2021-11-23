@@ -3,7 +3,7 @@
     :headers="headerTable"
     :items="records"
     :calculate-widths="true"
-    class="elevation-1 mt-2"
+    class="elevation-1 mt-0"
     :loading="loading"
     loading-text="Caricamento... Attendere, per favore."
     multi-sort
@@ -139,36 +139,45 @@ export default {
           align: "center",
           value: "name",
           sortable: true,
+          class: "grey white--text headerFont",
         },
         {
           text: "Lifecycle".toUpperCase(),
           align: "center",
           value: "lifecycle",
           sortable: true,
+          class: "grey white--text",
         },
         {
           text: "Location".toUpperCase(),
           align: "center",
           value: "location",
           sortable: true,
+          class: "grey white--text",
         },
         {
           text: "Is Virtual".toUpperCase(),
           align: "center",
           value: "virtual",
           sortable: true,
+          class: "grey white--text",
+          width: 30,
         },
         {
           text: "Resilienza Infracheck".toUpperCase(),
           align: "center",
           value: "resilienza",
-          sortable: false,
+          sortable: true,
+          class: "grey white--text",
+          width: 30,
         },
         {
           text: "Owner CI".toUpperCase(),
           align: "center",
           value: "owner",
           sortable: true,
+          class: "grey white--text",
+          width: 20,
         },
       ];
     },
@@ -176,4 +185,8 @@ export default {
 };
 </script>
 
-<style></style>
+<style scoped>
+.headerFont {
+  font-size: 20px;
+}
+</style>
