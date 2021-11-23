@@ -86,9 +86,6 @@ export default {
     return {
       orders: ["alfabetico BS/IS/BA", "per codice CAME"],
       filters: ["Foo", "Bar", "Fizz", "Buzz"],
-      type: "Business Service",
-      namecard: "Name BS",
-      idcame: "id CAME",
       operatingCardsList: [],
     };
   },
