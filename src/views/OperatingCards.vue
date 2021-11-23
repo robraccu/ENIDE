@@ -53,8 +53,8 @@
         <v-container>
           <v-row>
             <v-col
-              v-for="n in 31"
-              :key="n"
+              v-for="(oc, i) in opCardsList"
+              :key="i"
               cols="12"
               xl="2"
               lg="3"
@@ -62,9 +62,9 @@
               sm="6"
             >
               <OperatingCard
-                :type="type"
-                :namecard="namecard"
-                :idcame="idcame"
+                :type="oc.type"
+                :namecard="oc.name_card"
+                :idcame="oc.id_came"
               ></OperatingCard>
             </v-col>
           </v-row>
@@ -75,6 +75,7 @@
 </template>
 
 <script>
+import axios from "axios";
 import ContextualActionBar from "../components/ContextualActionBar.vue";
 import OperatingCard from "../components/OperatingCard.vue";
 export default {
@@ -88,7 +89,31 @@ export default {
       type: "Business Service",
       namecard: "Name BS",
       idcame: "id CAME",
+      operatingCardsList: [],
     };
+  },
+  computed: {
+    opCardsList() {
+      return this.operatingCardsList;
+    },
+  },
+  beforeMount() {
+    this.getOperatingCardsList();
+  },
+  methods: {
+    getOperatingCardsList() {
+      axios
+        .get("http://localhost:8080/card_list.json", {
+          headers: { "Content-Type": "application/json" },
+        })
+        .then((response) => {
+          this.operatingCardsList = response.data.cards;
+          console.log("Cards: ", this.operatingCardsList, this.startCreation);
+        })
+        .catch((err) => {
+          console.error("Failed to retrieve Operating Cards list", err);
+        });
+    },
   },
 };
 </script>

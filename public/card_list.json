@@ -1,0 +1,14 @@
+{
+    "cards": [
+        {
+            "type": "Business Service",
+            "name_card": "Nome scheda 1",
+            "id_came": "0001"
+        },
+        {
+            "type": "Business Service",
+            "name_card": "Nome scheda 2",
+            "id_came": "0002"
+        }
+    ]
+}
