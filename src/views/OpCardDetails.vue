@@ -35,7 +35,6 @@
         <v-container>
           <v-row>
             <v-col cols="12">
-              <!-- <OperatingCard></OperatingCard> -->
               <OpCardDetailsTabs></OpCardDetailsTabs>
             </v-col>
           </v-row>

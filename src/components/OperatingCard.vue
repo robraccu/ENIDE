@@ -24,6 +24,7 @@
             v-for="(item, i) in itemsMenu"
             :key="i"
             to="/operatingcarddetails"
+            :disabled="item.title != 'Scheda Operativa' ? true : false"
           >
             <v-list-item-title>{{ item.title }}</v-list-item-title>
           </v-list-item>
@@ -36,15 +37,17 @@
 <script>
 export default {
   props: { type: String, namecard: String, idcame: String },
-  data: () => ({
-    itemsMenu: [
-      { title: "Scheda Operativa" },
-      { title: "Piano operativo" },
-      { title: "Vista GDC" },
-      { title: "Info" },
-      { title: "Azioni opz." },
-    ],
-  }),
+  data() {
+    return {
+      itemsMenu: [
+        { title: "Scheda Operativa" },
+        { title: "Piano operativo" },
+        { title: "Vista GDC" },
+        { title: "Info" },
+        { title: "Azioni opz." },
+      ],
+    };
+  },
 };
 </script>
 
