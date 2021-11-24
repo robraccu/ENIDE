@@ -67,12 +67,12 @@ keycloak
           } else {
             console.warn(
               "Token not refreshed, valid for " +
-                Math.round(
-                  keycloak.tokenParsed.exp +
-                    keycloak.timeSkew -
-                    new Date().getTime() / 1000
-                ) +
-                " seconds"
+              Math.round(
+                keycloak.tokenParsed.exp +
+                keycloak.timeSkew -
+                new Date().getTime() / 1000
+              ) +
+              " seconds"
             );
           }
         })
