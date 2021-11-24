@@ -130,43 +130,43 @@
     "detailCame": [
         {
             "id_came": "f2df31253a0458ee4d27f6cdec80a819",
-            "came": "came",
-            "classe": "classe",
-            "stato": "stato",
-            "complianceClasse": "complianceClasse",
-            "referente": "referente"
+            "came": "camef2d",
+            "classe": "classef2d",
+            "stato": "statof2d",
+            "complianceClasse": "complianceClassef2d",
+            "referente": "referentef2d"
         },
         {
             "id_came": "702f807ab44c14822e7185f26b58cee0",
-            "came": "came",
-            "classe": "classe",
-            "stato": "stato",
-            "complianceClasse": "complianceClasse",
-            "referente": "referente"
+            "came": "came702",
+            "classe": "classe702",
+            "stato": "stato702",
+            "complianceClasse": "complianceClasse702",
+            "referente": "referente702"
         },
         {
             "id_came": "18c3e5c554e67f9041d7378b56e06021",
-            "came": "came",
-            "classe": "classe",
-            "stato": "stato",
-            "complianceClasse": "complianceClasse",
-            "referente": "referente"
+            "came": "came18c",
+            "classe": "classe18c",
+            "stato": "stato18c",
+            "complianceClasse": "complianceClasse18c",
+            "referente": "referente18c"
         },
         {
             "id_came": "8818898ca6e127b990c681c0a7df5702",
-            "came": "came",
-            "classe": "classe",
-            "stato": "stato",
-            "complianceClasse": "complianceClasse",
-            "referente": "referente"
+            "came": "came881",
+            "classe": "classe881",
+            "stato": "stato881",
+            "complianceClasse": "complianceClasse881",
+            "referente": "referente881"
         },
         {
             "id_came": "2ac8ed6ea05ab585a4ec5f1ce5d867a6",
-            "came": "came",
-            "classe": "classe",
-            "stato": "stato",
-            "complianceClasse": "complianceClasse",
-            "referente": "referente"
+            "came": "came2ac",
+            "classe": "classe2ac",
+            "stato": "stato2ac",
+            "complianceClasse": "complianceClasse2ac",
+            "referente": "referente2ac"
         }
     ]
 }

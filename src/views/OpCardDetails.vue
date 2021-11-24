@@ -5,17 +5,17 @@
     color="accent"
   >
     <ContextualActionBar
-      :title="'Scheda Operativa: ' + bs_name"
+      :title="'Scheda Operativa: ' + card_name"
     ></ContextualActionBar>
 
     <v-banner single-line sticky dark px-6>
       <v-row class="d-flex flex-row justify-center align-center">
         <v-col cols="9">
           <h4>
-            {{ detailCameValue[0].came }} – Classe [
-            {{ detailCameValue[0].classe }}] [{{ detailCameValue[0].stato }}] –
-            Compliance Classe [{{ detailCameValue[0].complianceClasse }}] – Ref.
-            [ {{ detailCameValue[0].referente }}]
+            {{ cardData.came }} – Classe [ {{ cardData.classe }}] [{{
+              cardData.stato
+            }}] – Compliance Classe [{{ cardData.complianceClasse }}] – Ref. [
+            {{ cardData.referente }}]
           </h4>
         </v-col>
 
@@ -57,8 +57,9 @@ export default {
   },
   data() {
     return {
-      bs_name: "[BS NAME]",
-      detailCameValue: [],
+      idcame: this.$route.params.id,
+      card_name: this.$route.params.card_name,
+      cardData: [],
     };
   },
   mounted() {
@@ -71,11 +72,12 @@ export default {
     async getDetailCame() {
       try {
         const response = await this.$http.get(
-          "http://localhost:3000/detailCame?id_came=2ac8ed6ea05ab585a4ec5f1ce5d867a6"
+          "http://localhost:3000/detailCame",
+          { params: { id_came: this.idcame } }
         );
         // JSON responses are automatically parsed.
-        this.detailCameValue = response.data;
-        console.log("detailCameValue ", this.detailCameValue);
+        this.cardData = response.data[0];
+        console.log("cardData ", this.cardData);
       } catch (error) {
         console.log(error);
       }

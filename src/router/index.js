@@ -16,7 +16,7 @@ const routes = [
     component: () => import("../views/OperatingCards.vue"),
   },
   {
-    path: "/operatingcarddetails",
+    path: "/operatingcarddetails/:id/name/:card_name",
     name: "OperatingCardDetails",
     component: () => import("../views/OpCardDetails.vue"),
   },

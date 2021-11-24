@@ -65,6 +65,7 @@
             >
               <OperatingCard
                 :type="card.type"
+                :label="card.label"
                 :namecard="card.name_card"
                 :idcame="card.id_came"
               ></OperatingCard>
