@@ -7,6 +7,8 @@ import "roboto-fontface/css/roboto/roboto-fontface.css";
 import "@mdi/font/css/materialdesignicons.css";
 import PerfectScrollbar from "vue2-perfect-scrollbar";
 import "vue2-perfect-scrollbar/dist/vue2-perfect-scrollbar.css";
+import axios from "axios";
+Vue.prototype.$http = axios;
 
 import Keycloak from "../node_modules/keycloak-js/";
 import EnvProvider from "jvjr-docker-env";

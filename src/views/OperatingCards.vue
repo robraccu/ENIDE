@@ -20,6 +20,8 @@
         <v-col cols="3">
           <v-select
             :items="filters"
+            item-text="valore"
+            item-value="chiave"
             outlined
             label="Filtri"
             dense
@@ -53,8 +55,8 @@
         <v-container>
           <v-row>
             <v-col
-              v-for="(oc, i) in opCardsList"
-              :key="i"
+              v-for="(card, index) in cards"
+              :key="index"
               cols="12"
               xl="3"
               lg="4"
@@ -62,10 +64,9 @@
               sm="12"
             >
               <OperatingCard
-                :type="oc.type"
-                :label="oc.label"
-                :namecard="oc.name_card"
-                :idcame="oc.id_came"
+                :type="card.type"
+                :namecard="card.name_card"
+                :idcame="card.id_came"
               ></OperatingCard>
             </v-col>
           </v-row>
@@ -76,7 +77,6 @@
 </template>
 
 <script>
-import axios from "axios";
 import connectionMixin from "@/mixins/connectionParams.js";
 import ContextualActionBar from "../components/ContextualActionBar.vue";
 import OperatingCard from "../components/OperatingCard.vue";
@@ -86,30 +86,33 @@ export default {
   mixins: [connectionMixin],
   data() {
     return {
-      orders: ["alfabetico BS/IS/BA", "per codice CAME"],
-      filters: ["Foo", "Bar", "Fizz", "Buzz"],
-      operatingCardsList: [],
+      orders: ["A-Z", "per codice CAME"],
+      filters: [],
+      cards: [],
     };
   },
-  computed: {
-    opCardsList() {
-      return this.operatingCardsList;
-    },
-  },
-  beforeMount() {
-    this.getOperatingCardsList();
+  mounted() {
+    this.getFilters();
+    this.getCards();
   },
   methods: {
-    getOperatingCardsList() {
-      axios
-        .get("/card_list.json")
-        .then((response) => {
-          this.operatingCardsList = response.data.cards;
-          console.log("Cards: ", this.operatingCardsList, this.startCreation);
-        })
-        .catch((err) => {
-          console.error("Failed to retrieve Operating Cards list", err);
-        });
+    async getFilters() {
+      try {
+        const response = await this.$http.get("http://localhost:3000/filters");
+        // JSON responses are automatically parsed.
+        this.filters = response.data;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async getCards() {
+      try {
+        const response = await this.$http.get("http://localhost:3000/cards");
+        // JSON responses are automatically parsed.
+        this.cards = response.data;
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };

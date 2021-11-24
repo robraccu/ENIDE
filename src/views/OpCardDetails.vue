@@ -12,8 +12,10 @@
       <v-row class="d-flex flex-row justify-center align-center">
         <v-col cols="9">
           <h4>
-            [CAME] – Classe [Classe] [Stato] – Compliance Classe [Compliance] –
-            Ref. [Referente]
+            {{ detailCameValue[0].came }} – Classe [
+            {{ detailCameValue[0].classe }}] [{{ detailCameValue[0].stato }}] –
+            Compliance Classe [{{ detailCameValue[0].complianceClasse }}] – Ref.
+            [ {{ detailCameValue[0].referente }}]
           </h4>
         </v-col>
 
@@ -56,11 +58,27 @@ export default {
   data() {
     return {
       bs_name: "[BS NAME]",
+      detailCameValue: [],
     };
+  },
+  mounted() {
+    this.getDetailCame();
   },
   methods: {
     goBack() {
       window.history.length > 1 ? this.$router.go(-1) : this.$router.push("/");
+    },
+    async getDetailCame() {
+      try {
+        const response = await this.$http.get(
+          "http://localhost:3000/detailCame?id_came=2ac8ed6ea05ab585a4ec5f1ce5d867a6"
+        );
+        // JSON responses are automatically parsed.
+        this.detailCameValue = response.data;
+        console.log("detailCameValue ", this.detailCameValue);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
