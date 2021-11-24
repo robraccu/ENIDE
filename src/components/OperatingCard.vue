@@ -36,7 +36,7 @@
           <v-list-item
             v-for="(item, i) in itemsMenu"
             :key="i"
-            :to="`/operatingcarddetails/` + idcame + namecard"
+            :to="`/operatingcarddetails/` + idcame + `/name/` + namecard"
             :disabled="item.title != 'Scheda Operativa' ? true : false"
           >
             <v-list-item-title>{{ item.title }}</v-list-item-title>
