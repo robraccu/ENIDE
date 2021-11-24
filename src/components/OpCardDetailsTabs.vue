@@ -9,9 +9,7 @@
 
     <v-tabs-items v-model="tab">
       <v-tab-item class="secondary darken-1">
-        <!-- <v-card flat> -->
         <DataTableTopologia></DataTableTopologia>
-        <!-- </v-card> -->
       </v-tab-item>
     </v-tabs-items>
   </div>
