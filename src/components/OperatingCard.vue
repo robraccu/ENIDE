@@ -1,15 +1,28 @@
 <template>
   <v-card>
-    <v-card-subtitle class="blue white--text text-overline">{{
-      type
+    <v-card-subtitle class="white--text text-overline" :class="classStyle">{{
+      label
     }}</v-card-subtitle>
-    <v-card-title>[{{ namecard }}]</v-card-title>
-    <v-card-text>[{{ idcame }}]</v-card-text>
+    <v-card-title
+      ><h5 class="text-truncate">{{ namecard }}</h5></v-card-title
+    >
+    <v-card-text>{{ idcame }}</v-card-text>
     <v-divider></v-divider>
     <v-card-actions>
-      <v-btn rounded icon>
-        <v-icon color="error">mdi-delete</v-icon>
-      </v-btn>
+      <v-tooltip bottom>
+        <template v-slot:activator="{ on, attrs }">
+          <v-btn
+            rounded
+            icon
+            v-bind="attrs"
+            v-on="on"
+            to="/operatingcarddetails"
+          >
+            <v-icon color="primary">mdi-card-text-outline</v-icon>
+          </v-btn>
+        </template>
+        <span>apri Scheda Operativa</span>
+      </v-tooltip>
       <v-spacer></v-spacer>
 
       <v-menu top left>
@@ -36,7 +49,7 @@
 
 <script>
 export default {
-  props: { type: String, namecard: String, idcame: String },
+  props: { type: String, label: String, namecard: String, idcame: String },
   data() {
     return {
       itemsMenu: [
@@ -47,6 +60,16 @@ export default {
         { title: "Azioni opz." },
       ],
     };
+  },
+  computed: {
+    classStyle: function () {
+      return {
+        blue: this.type === "business_service",
+        red: this.type === "cluster_software",
+        green: this.type === "infrastructure_service",
+        purple: this.type === "business_application",
+      };
+    },
   },
 };
 </script>

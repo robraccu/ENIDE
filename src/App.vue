@@ -6,8 +6,10 @@
           <img :src="require('./assets/logo.jpg')" alt="ENI" />
         </v-avatar>
 
-        <v-responsive max-width="400"
-          ><h1>ICT Availability portal name</h1></v-responsive
+        <v-spacer></v-spacer>
+
+        <v-responsive max-width="150"
+          ><h1 class="text-right">VIRGILIO</h1></v-responsive
         >
         <v-spacer></v-spacer>
         <app-bar-menu-user></app-bar-menu-user>

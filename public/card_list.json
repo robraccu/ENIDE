@@ -1,14 +1,34 @@
 {
     "cards": [
         {
-            "type": "Business Service",
-            "name_card": "Nome scheda 1",
-            "id_came": "0001"
+            "id_came": "f2df31253a0458ee4d27f6cdec80a819",
+            "type": "infrastructure_service",
+            "name_card": "INFRASTRUTTURA CSRM (PROD)_100080",
+            "label": "Infrastructure Service"
         },
         {
-            "type": "Business Service",
-            "name_card": "Nome scheda 2",
-            "id_came": "0002"
+            "id_came": "702f807ab44c14822e7185f26b58cee0",
+            "type": "infrastructure_service",
+            "name_card": "BASIC DISTRIBUTED SERVICES (PROD)_100236",
+            "label": "Infrastructure Service"
+        },
+        {
+            "id_came": "18c3e5c554e67f9041d7378b56e06021",
+            "type": "business_service",
+            "name_card": "LEGAL ARCHIVES (PROD)_569",
+            "label": "Business Service"
+        },
+        {
+            "id_came": "8818898ca6e127b990c681c0a7df5702",
+            "type": "cluster_software",
+            "name_card": "Microsoft Cluster SW (02srv006gm)",
+            "label": "Running Software"
+        },
+        {
+            "id_came": "2ac8ed6ea05ab585a4ec5f1ce5d867a6",
+            "type": "business_application",
+            "name_card": "VCENTER ABU DHABI",
+            "label": "Business Application"
         }
     ]
 }

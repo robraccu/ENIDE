@@ -56,13 +56,14 @@
               v-for="(oc, i) in opCardsList"
               :key="i"
               cols="12"
-              xl="2"
-              lg="3"
-              md="4"
-              sm="6"
+              xl="3"
+              lg="4"
+              md="6"
+              sm="12"
             >
               <OperatingCard
                 :type="oc.type"
+                :label="oc.label"
                 :namecard="oc.name_card"
                 :idcame="oc.id_came"
               ></OperatingCard>
