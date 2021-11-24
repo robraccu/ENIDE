@@ -15,12 +15,8 @@ Vue.use(PerfectScrollbar);
 
 Vue.config.productionTip = false;
 
-console.log(
-  "ENV: ",
-  process.env.VUE_APP_KEYCLOAK_INIT_URL,
-  " ",
-  EnvProvider.value("KEYCLOAK_INIT_URL")
-);
+store.state.apiModule.api_config.api_host = EnvProvider.value("API_HOST");
+store.state.apiModule.api_config.api_key = EnvProvider.value("API_KEY");
 
 let initOptions = {
   url: EnvProvider.value("KEYCLOAK_INIT_URL"),
@@ -28,7 +24,7 @@ let initOptions = {
   clientId: EnvProvider.value("KEYCLOAK_CLIENTID"),
   onLoad: EnvProvider.value("KEYCLOAK_ONLOAD"),
 };
-
+store.state.loginModule.keycloak_config = initOptions;
 let keycloak = Keycloak(initOptions);
 
 keycloak
@@ -38,12 +34,12 @@ keycloak
       console.log("Not logged!");
       window.location.reload();
     } else {
-      console.log("I'm in logged! ", auth);
-      console.info("Authenticated: ", keycloak.token);
+      store.state.loginModule.token = keycloak.token;
       keycloak
         .loadUserProfile()
         .then(function (profile) {
-          console.log("USER: ", profile.username, " ", profile.email);
+          store.state.loginModule.username = profile.username;
+          store.state.loginModule.email = profile.email;
 
           new Vue({
             router,
@@ -64,7 +60,8 @@ keycloak
         .updateToken(20000)
         .then((refreshed) => {
           if (refreshed) {
-            console.info("Token refreshed" + refreshed);
+            console.info("Token refreshed " + refreshed);
+            store.state.loginModule.token = keycloak.token;
           } else {
             console.warn(
               "Token not refreshed, valid for " +

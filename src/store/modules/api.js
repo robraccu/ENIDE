@@ -3,12 +3,12 @@ export default {
 
   state: () => ({
     api_config: {
-      apihost: "",
+      api_host: "",
       api_key: "",
     },
   }),
   mutations: {
-    SET_SIDEDRAWER(state, value) {
+    SET_APIHOST(state, value) {
       if (value != undefined) return (state.apihost = value);
     },
   },

@@ -6,11 +6,11 @@
           <img :src="require('./assets/logo.jpg')" alt="ENI" />
         </v-avatar>
 
-        <v-spacer></v-spacer>
-
         <v-responsive max-width="400"
           ><h1>ICT Availability portal name</h1></v-responsive
         >
+        <v-spacer></v-spacer>
+        <app-bar-menu-user></app-bar-menu-user>
       </v-container>
     </v-app-bar>
 
@@ -27,7 +27,9 @@
 <script>
 export default {
   name: "App",
-
+  components: {
+    AppBarMenuUser: () => import("@/components/AppBarMenuUser"),
+  },
   watch: {
     $route() {
       this.$refs.scroll.$el.scrollTop = 0;
