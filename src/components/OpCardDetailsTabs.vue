@@ -1,6 +1,6 @@
 <template>
   <div id="tabsDetails">
-    <v-tabs v-model="tab" background-color="secondary" grow color="#000">
+    <v-tabs v-model="tab" background-color="secondary darken-1" centered>
       <v-tab> Topologia Infrastruttura </v-tab>
       <v-tab disabled> Topologie Running Software </v-tab>
       <v-tab disabled> Dipendenze </v-tab>
@@ -8,7 +8,7 @@
     </v-tabs>
 
     <v-tabs-items v-model="tab">
-      <v-tab-item class="secondary">
+      <v-tab-item class="secondary darken-1">
         <!-- <v-card flat> -->
         <DataTableTopologia></DataTableTopologia>
         <!-- </v-card> -->
