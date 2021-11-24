@@ -11,6 +11,8 @@
         <v-responsive max-width="150"
           ><h1 class="text-right">VIRGILIO</h1></v-responsive
         >
+        <v-spacer></v-spacer>
+        <app-bar-menu-user></app-bar-menu-user>
       </v-container>
     </v-app-bar>
 
@@ -27,7 +29,9 @@
 <script>
 export default {
   name: "App",
-
+  components: {
+    AppBarMenuUser: () => import("@/components/AppBarMenuUser"),
+  },
   watch: {
     $route() {
       this.$refs.scroll.$el.scrollTop = 0;

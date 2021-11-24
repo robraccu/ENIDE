@@ -77,12 +77,13 @@
 
 <script>
 import axios from "axios";
+import connectionMixin from "@/mixins/connectionParams.js";
 import ContextualActionBar from "../components/ContextualActionBar.vue";
 import OperatingCard from "../components/OperatingCard.vue";
 export default {
   name: "OperatingCards",
   components: { ContextualActionBar, OperatingCard },
-
+  mixins: [connectionMixin],
   data() {
     return {
       orders: ["alfabetico BS/IS/BA", "per codice CAME"],
@@ -101,9 +102,7 @@ export default {
   methods: {
     getOperatingCardsList() {
       axios
-        .get("http://localhost:8080/card_list.json", {
-          headers: { "Content-Type": "application/json" },
-        })
+        .get("/card_list.json")
         .then((response) => {
           this.operatingCardsList = response.data.cards;
           console.log("Cards: ", this.operatingCardsList, this.startCreation);
