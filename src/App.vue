@@ -2,15 +2,22 @@
   <v-app id="inspire">
     <v-app-bar color="secondary" flat extended>
       <v-container class="py-0 fill-height">
-        <v-avatar class="mr-10" color="grey darken-1" size="36" tile>
-          <img :src="require('./assets/logo.jpg')" alt="ENI" />
-        </v-avatar>
+        <v-tooltip right>
+          <template v-slot:activator="{ on, attrs }">
+            <a href="/" style="text-decoration: none" v-bind="attrs" v-on="on">
+              <span class="d-inline-flex justify-start align-center">
+                <v-avatar class="mr-2" size="48" tile elevation="3">
+                  <img :src="require('./assets/Logo_ENI.svg')" alt="ENI" />
+                </v-avatar>
 
-        <v-spacer></v-spacer>
-
-        <v-responsive max-width="150"
-          ><h1 class="text-right">VIRGILIO</h1></v-responsive
-        >
+                <v-responsive max-width="150">
+                  <h1 class="text-left">VIRGILIO</h1>
+                </v-responsive>
+              </span>
+            </a>
+          </template>
+          <span>torna a Home</span>
+        </v-tooltip>
         <v-spacer></v-spacer>
         <app-bar-menu-user></app-bar-menu-user>
       </v-container>
