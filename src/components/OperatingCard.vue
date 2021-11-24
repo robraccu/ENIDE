@@ -16,7 +16,7 @@
             icon
             v-bind="attrs"
             v-on="on"
-            to="/operatingcarddetails"
+            :to="`/operatingcarddetails/` + idcame + `/name/` + namecard"
           >
             <v-icon color="primary">mdi-card-text-outline</v-icon>
           </v-btn>
@@ -36,7 +36,7 @@
           <v-list-item
             v-for="(item, i) in itemsMenu"
             :key="i"
-            to="/operatingcarddetails"
+            :to="`/operatingcarddetails/` + idcame + namecard"
             :disabled="item.title != 'Scheda Operativa' ? true : false"
           >
             <v-list-item-title>{{ item.title }}</v-list-item-title>

@@ -2,8 +2,8 @@
   <v-data-table
     :headers="headerTable"
     :items="records"
-    :calculate-widths="true"
-    class="elevation-1 mt-0"
+    :calculate-widths="false"
+    class="main-table elevation-1 mt-0"
     :loading="loading"
     loading-text="Caricamento... Attendere, per favore."
     multi-sort
@@ -18,116 +18,12 @@ export default {
     fixHeader: true,
     records: [
       {
-        name: "02srv00qwe",
-        lifecycle: "configured",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00vgh",
-        lifecycle: "in use ",
-        location: "CAGE-A1",
-        virtual: "true",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00xcf",
-        lifecycle: "configured",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00dfg",
-        lifecycle: "configured",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00tgb",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "false",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00dfg",
-        lifecycle: "configured",
-        location: "CAGE-A",
-        virtual: "false",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00ert",
-        lifecycle: "configured",
-        location: "CAGE-A",
-        virtual: "false",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00zxc",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00azx",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00eed",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00ezx",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00csd",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00czx",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "NO",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
-      },
-      {
-        name: "02srv00asd",
-        lifecycle: "in use",
-        location: "CAGE-A",
-        virtual: "true",
-        resilienza: "SI",
-        owner: "CC_PAAS_HS_SYS_LINUXUNIX",
+        name: "",
+        lifecycle: "",
+        location: "",
+        virtual: "",
+        resilienza: "",
+        owner: "",
       },
     ],
   }),
@@ -135,51 +31,122 @@ export default {
     headerTable() {
       return [
         {
-          text: "Nome nodo".toUpperCase(),
+          text: "[BusinnesApplication] \nDisplay Label",
           align: "center",
-          value: "name",
+          value: "BADisplayLabel",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+          width: 100,
+        },
+        {
+          text: "[SolutionL0] Display Label",
+          align: "center",
+          value: "S0DisplayLabel",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+          cellClass: "cellFont",
+          width: 105,
+        },
+        {
+          text: "[Node] Display Label",
+          align: "NodeDisplayLabel",
+          value: "NodeDisplayLabel",
           sortable: true,
           class: "primary lighten-4 white--text",
         },
         {
-          text: "Lifecycle".toUpperCase(),
+          text: "[Node] LifecycleStatus",
           align: "center",
-          value: "lifecycle",
+          value: "NodeLifecycleStatus",
           sortable: true,
           class: "primary lighten-4 white--text",
         },
         {
-          text: "Location".toUpperCase(),
+          text: "[Node] CalculatedLocation",
           align: "center",
-          value: "location",
+          value: "NodeCalculatedLocation",
           sortable: true,
           class: "primary lighten-4 white--text",
         },
         {
-          text: "Is Virtual".toUpperCase(),
+          text: "[Node] Node is Virtual",
           align: "center",
-          value: "virtual",
+          value: "NodeIsVirtual",
           sortable: true,
           class: "primary lighten-4 white--text",
-          width: 30,
         },
         {
-          text: "Resilienza Infracheck".toUpperCase(),
+          text: "Datacenter",
           align: "center",
-          value: "resilienza",
+          value: "Datacenter",
           sortable: true,
           class: "primary lighten-4 white--text",
-          width: 30,
         },
         {
-          text: "Owner CI".toUpperCase(),
+          text: "Cluster",
           align: "center",
-          value: "owner",
+          value: "Cluster",
           sortable: true,
           class: "primary lighten-4 white--text",
-          width: 20,
+        },
+        {
+          text: "Resilienza Infra.",
+          align: "center",
+          value: "ResilienzaInfra",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+        },
+        {
+          text: "[Node] OS Friendly Name",
+          align: "center",
+          value: "NodeOSFriendlyName",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+          width: 200,
+        },
+        {
+          text: "[Node] DiscoveredModel",
+          align: "center",
+          value: "NodeDiscoveredModel",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+        },
+        {
+          text: "[Node] Owner Display Label",
+          align: "center",
+          value: "NodeOwnerDisplayLabel",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+        },
+        {
+          text: "Issue",
+          align: "center",
+          value: "Issue",
+          sortable: true,
+          class: "primary lighten-4 white--text",
+        },
+        {
+          text: "Check Compliance",
+          align: "center",
+          value: "CheckCompliance",
+          sortable: true,
+          class: "primary lighten-4 white--text",
         },
       ];
+    },
+  },
+  mounted() {
+    this.getData();
+  },
+  methods: {
+    async getData() {
+      try {
+        const response = await this.$http.get("http://localhost:3000/dati");
+        // JSON responses are automatically parsed.
+        this.records = response.data;
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
@@ -188,5 +155,11 @@ export default {
 <style scoped>
 .headerFont {
   font-size: 20px;
+}
+.v-data-table >>> tbody td {
+  font-size: 12px !important;
+}
+.main-table table {
+  table-layout: fixed;
 }
 </style>

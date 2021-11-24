@@ -1,0 +1,172 @@
+{
+    "dati": [
+        {
+            "BADisplayLabel": "ensv1hgj",
+            "S0DisplayLabel": "Configured",
+            "NodeDisplayLabel": "001DD8B72355",
+            "NodeLifecycleStatus": "none",
+            "NodeCalculatedLocation": "CAGE-A",
+            "NodeIsVirtual": "true",
+            "Datacenter": "none",
+            "Cluster": "SPA-BT-11",
+            "ResilienzaInfra": "NO",
+            "NodeOSFriendlyName": "Microsoft Windows 2016 Server Standard 64 bit",
+            "NodeDiscoveredModel": "none",
+            "NodeOwnerDisplayLabel": "CC2_PAAS_UNIXLINUX_SC_SYS",
+            "Issue": "none",
+            "CheckCompliance": "none"
+        },
+        {
+            "BADisplayLabel": "ansv1hgj",
+            "S0DisplayLabel": "In use",
+            "NodeDisplayLabel": "001DD8B72057",
+            "NodeLifecycleStatus": "none",
+            "NodeCalculatedLocation": "CAGE-B",
+            "NodeIsVirtual": "false",
+            "Datacenter": "none",
+            "Cluster": "SPA-BT-02",
+            "ResilienzaInfra": "SI",
+            "NodeOSFriendlyName": "Microsoft Windows 2020 Server Standard 64 bit",
+            "NodeDiscoveredModel": "none",
+            "NodeOwnerDisplayLabel": "CC2_PAAS_UNIXLINUX_SC_SYS",
+            "Issue": "none",
+            "CheckCompliance": "none"
+        },
+        {
+            "BADisplayLabel": "eese1hgj",
+            "S0DisplayLabel": "In use",
+            "NodeDisplayLabel": "001118B72057",
+            "NodeLifecycleStatus": "none",
+            "NodeCalculatedLocation": "SI",
+            "NodeIsVirtual": "true",
+            "Datacenter": "none",
+            "Cluster": "SPA-DATASTAGE-01",
+            "ResilienzaInfra": "SI",
+            "NodeOSFriendlyName": "Microsoft Windows 2020 Server Standard 64 bit",
+            "NodeDiscoveredModel": "none",
+            "NodeOwnerDisplayLabel": "CC2_PAAS_UNIXLINUX_SC_SYS",
+            "Issue": "none",
+            "CheckCompliance": "none"
+        },
+        {
+            "BADisplayLabel": "ensv1h23",
+            "S0DisplayLabel": "S0DisplayLabel...",
+            "NodeDisplayLabel": "001DD8B72111",
+            "NodeLifecycleStatus": "NodeLifecycleStatus...",
+            "NodeCalculatedLocation": "SI",
+            "NodeIsVirtual": "false",
+            "Datacenter": "none",
+            "Cluster": "SPA-BT-11",
+            "ResilienzaInfra": "SI",
+            "NodeOSFriendlyName": "Microsoft Windows 2016 Server Standard 64 bit",
+            "NodeDiscoveredModel": "none",
+            "NodeOwnerDisplayLabel": "CC2_PAAS_UNIXLINUX_SC_SYS...",
+            "Issue": "none",
+            "CheckCompliance": "none"
+        },
+        {
+            "BADisplayLabel": "ensv1h11",
+            "S0DisplayLabel": "In use",
+            "NodeDisplayLabel": "001DD8B72057",
+            "NodeLifecycleStatus": "NodeLifecycleStatus...",
+            "NodeCalculatedLocation": "SI",
+            "NodeIsVirtual": "NodeIsVirtual...",
+            "Datacenter": "none",
+            "Cluster": "SPA-BT-UI11",
+            "ResilienzaInfra": "NO",
+            "NodeOSFriendlyName": "Microsoft Windows 2016 Server Standard 64 bit",
+            "NodeDiscoveredModel": "NodeDiscoveredModel...",
+            "NodeOwnerDisplayLabel": "CC2_PAAS_UNIXLINUX_SC_SYS",
+            "Issue": "Issue...",
+            "CheckCompliance": "CheckCompliance...."
+        }
+    ],
+    "filters": [
+        {
+            "chiave": "1",
+            "valore": "BA"
+        },
+        {
+            "chiave": "2",
+            "valore": "S0"
+        },
+        {
+            "chiave": "3",
+            "valore": "Cluster"
+        }
+    ],
+    "cards": [
+        {
+            "id_came": "f2df31253a0458ee4d27f6cdec80a819",
+            "type": "infrastructure_service",
+            "name_card": "INFRASTRUTTURA CSRM (PROD)_100080",
+            "label": "Infrastructure Service"
+        },
+        {
+            "id_came": "702f807ab44c14822e7185f26b58cee0",
+            "type": "infrastructure_service",
+            "name_card": "BASIC DISTRIBUTED SERVICES (PROD)_100236",
+            "label": "Infrastructure Service"
+        },
+        {
+            "id_came": "18c3e5c554e67f9041d7378b56e06021",
+            "type": "business_service",
+            "name_card": "LEGAL ARCHIVES (PROD)_569",
+            "label": "Business Service"
+        },
+        {
+            "id_came": "8818898ca6e127b990c681c0a7df5702",
+            "type": "cluster_software",
+            "name_card": "Microsoft Cluster SW (02srv006gm)",
+            "label": "Running Software"
+        },
+        {
+            "id_came": "2ac8ed6ea05ab585a4ec5f1ce5d867a6",
+            "type": "business_application",
+            "name_card": "VCENTER ABU DHABI",
+            "label": "Business Application"
+        }
+    ],
+    "detailCame": [
+        {
+            "id_came": "f2df31253a0458ee4d27f6cdec80a819",
+            "came": "camef2d",
+            "classe": "classef2d",
+            "stato": "statof2d",
+            "complianceClasse": "complianceClassef2d",
+            "referente": "referentef2d"
+        },
+        {
+            "id_came": "702f807ab44c14822e7185f26b58cee0",
+            "came": "came702",
+            "classe": "classe702",
+            "stato": "stato702",
+            "complianceClasse": "complianceClasse702",
+            "referente": "referente702"
+        },
+        {
+            "id_came": "18c3e5c554e67f9041d7378b56e06021",
+            "came": "came18c",
+            "classe": "classe18c",
+            "stato": "stato18c",
+            "complianceClasse": "complianceClasse18c",
+            "referente": "referente18c"
+        },
+        {
+            "id_came": "8818898ca6e127b990c681c0a7df5702",
+            "came": "came881",
+            "classe": "classe881",
+            "stato": "stato881",
+            "complianceClasse": "complianceClasse881",
+            "referente": "referente881"
+        },
+        {
+            "id_came": "2ac8ed6ea05ab585a4ec5f1ce5d867a6",
+            "came": "came2ac",
+            "classe": "classe2ac",
+            "stato": "stato2ac",
+            "complianceClasse": "complianceClasse2ac",
+            "referente": "referente2ac"
+        }
+    ]
+}

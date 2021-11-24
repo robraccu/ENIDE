@@ -5,15 +5,17 @@
     color="accent"
   >
     <ContextualActionBar
-      :title="'Scheda Operativa: ' + bs_name"
+      :title="'Scheda Operativa: ' + card_name"
     ></ContextualActionBar>
 
     <v-banner single-line sticky dark px-6>
       <v-row class="d-flex flex-row justify-center align-center">
         <v-col cols="9">
           <h4>
-            [CAME] – Classe [Classe] [Stato] – Compliance Classe [Compliance] –
-            Ref. [Referente]
+            {{ cardData.came }} – Classe [ {{ cardData.classe }}] [{{
+              cardData.stato
+            }}] – Compliance Classe [{{ cardData.complianceClasse }}] – Ref. [
+            {{ cardData.referente }}]
           </h4>
         </v-col>
 
@@ -55,12 +57,30 @@ export default {
   },
   data() {
     return {
-      bs_name: "[BS NAME]",
+      idcame: this.$route.params.id,
+      card_name: this.$route.params.card_name,
+      cardData: [],
     };
+  },
+  mounted() {
+    this.getDetailCame();
   },
   methods: {
     goBack() {
       window.history.length > 1 ? this.$router.go(-1) : this.$router.push("/");
+    },
+    async getDetailCame() {
+      try {
+        const response = await this.$http.get(
+          "http://localhost:3000/detailCame",
+          { params: { id_came: this.idcame } }
+        );
+        // JSON responses are automatically parsed.
+        this.cardData = response.data[0];
+        console.log("cardData ", this.cardData);
+      } catch (error) {
+        console.log(error);
+      }
     },
   },
 };
