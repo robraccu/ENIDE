@@ -88,11 +88,11 @@
         },
         {
             "chiave": "2",
-            "valore": "S0"
+            "valore": "BS"
         },
         {
             "chiave": "3",
-            "valore": "Cluster"
+            "valore": "RS"
         }
     ],
     "cards": [
